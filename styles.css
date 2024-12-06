@@ -1,0 +1,67 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+    border-right: 1px solid #dee2e6;
+}
+
+.sidebar-title {
+    color: #333;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+.sidebar-title:hover {
+    color: #333; 
+    text-decoration: none;
+}
+
+.accordion-button {
+    font-size: 1rem;
+    color: #333;
+    background-color: #f8f9fa;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.accordion-button.no-hover:hover {
+    color: #333; 
+    background-color: #f8f9fa;
+    cursor: pointer; 
+}
+
+.accordion-item {
+    border: none; 
+}
+
+.accordion-body ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.accordion-body li {
+    margin-bottom: 8px;
+}
+
+.accordion-body a {
+    color: #333;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.custom-list li {
+    margin-bottom: 15px; 
+    line-height: 1.5;   
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+}
+

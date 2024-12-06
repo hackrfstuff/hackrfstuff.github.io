@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSD Card Setup</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div id="sidebar-container" class="col-md-3 col-lg-2 d-md-block bg-light sidebar p-3"></div>
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="padding-top: 2rem;">
+                <div class="row row-cols-1 g-4">
+                    <div class="col">
+                        <div class="card h-100 border-0">
+                            <div class="card-body">
+                                <h3 class="card-title">MicroSD Card Setup (Windows Guide)</h3>
+                                <p class="card-text">For the sake of keeping this guide simple, the steps are the exactly the same for people with MicroSD Cards smaller than 32 gigabytes.</p>
+                                <ol class="custom-list">
+                                    <li>
+                                        Download
+                                        <a href="../utils/guiformat.exe" class="text-decoration-none" style="color: blue;" download>
+                                            FAT32Format
+                                        </a>
+                                        and run the program.
+                                    </li>
+                                    <li>
+                                        Plug in your MicroSD Card into your computer. Make sure that it is not an empty partition. If it is, format it using Disk Management to exFAT or any other file format.
+                                    </li>
+                                    <li>
+                                        Select your MicroSD Card in the "Drive" menu, and then select the allocation size to "32768".
+                                        <br>
+                                        <img src="../images/fat32format.png" alt="Select MicroSD Card Screenshot" style="max-width: 400px; height: auto; margin: 10px 0;">
+                                    </li>
+                                    <li>Press the "Start" button and wait until the process is complete.</li>
+                                    <li>You can now eject the MicroSD Card, and move on to the next page.</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        fetch('../index.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const htmlDoc = parser.parseFromString(data, 'text/html');
+                const sidebar = htmlDoc.querySelector('.sidebar');
+                document.getElementById('sidebar-container').innerHTML = sidebar.innerHTML;
+
+                const links = document.querySelectorAll('#sidebar-container a');
+                links.forEach(link => {
+                    const href = link.getAttribute('href');
+                    if (href && href.startsWith('./')) {
+                        link.setAttribute('href', href.replace('./', '../'));
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading sidebar:', error));
+    </script>
+</body>
+</html>
