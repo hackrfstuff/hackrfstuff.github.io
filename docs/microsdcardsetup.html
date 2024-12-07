@@ -18,20 +18,14 @@
                     <div class="col">
                         <div class="card h-100 border-0">
                             <div class="card-body">
-                                <!-- Windows Guide (by arouut) -->
+                                <p class="text-muted" style="font-size: 0.9rem; margin-bottom: 0.5rem;">aroout and pr3</p>
                                 <h3 class="card-title">MicroSD Card Setup (Windows Guide)</h3>
-                                <p class="card-text">For the sake of keeping this guide simple, the steps are the exactly the same for people with MicroSD Cards smaller than 32 gigabytes.</p>
+                                <p class="card-text">For the sake of keeping this guide simple, the steps are exactly the same for people with MicroSD Cards smaller than 32 gigabytes.</p>
                                 <ol class="custom-list">
                                     <li>
-                                        Download
-                                        <a href="../utils/guiformat.exe" class="text-decoration-none" style="color: blue;" download>
-                                            FAT32Format
-                                        </a>
-                                        and run the program.
+                                        Download <a href="../utils/guiformat.exe" class="text-decoration-none" style="color: blue;" download>FAT32Format</a> and run the program.
                                     </li>
-                                    <li>
-                                        Plug in your MicroSD Card into your computer. Make sure that it is not an empty partition. If it is, format it using Disk Management to exFAT or any other file format.
-                                    </li>
+                                    <li>Plug in your MicroSD Card into your computer. Make sure that it is not an empty partition. If it is, format it using Disk Management to exFAT or any other file format.</li>
                                     <li>
                                         Select your MicroSD Card in the "Drive" menu, and then select the allocation size to "32768".
                                         <br>
@@ -39,54 +33,60 @@
                                     </li>
                                     <li>Press the "Start" button and wait until the process is complete.</li>
                                     <li>You can now eject the MicroSD Card, and move on to the next page.</li>
-                                    <li>For a Linux guide, please look below.</li> 
+                                    <li>For a Linux guide, please look below.</li>
                                 </ol>
                                 <hr class="my-4">
-                                <!-- Linux Guide (pr3 made this!) -->
+                                
                                 <h3 class="card-title">MicroSD Card Setup (Linux Guide using GParted)</h3>
                                 <p class="card-text">This guide is for MicroSD cards under 32GB.</p>
-                                <i>For the further sake of simplicity, a GUI tool is intentionally used. You may also want to back up any important files on your MicroSD card before formatting.</i></p>
+                                <i>For the further sake of simplicity, a GUI tool is intentionally used. You may also want to back up any important files on your MicroSD card before formatting.</i>
                                 <ol class="custom-list">
-                                    <li>as the Windows guide specifies, plug your MicroSD card into your computer.</li>
+                                    <li>As the Windows guide specifies, plug your MicroSD card into your computer.</li>
                                     <li>Update your Linux system with <code>sudo apt update</code>, <code>sudo pacman -Syu</code>, or <code>sudo yum update</code>.</li>
-                                    <li>Install GParted with <code>sudo apt install gparted</code>, <code>sudo pacman -Sy gparted</code>, or <code>sudo yum install gparted</code>, and run it with root priviledges with <code>sudo gparted</code>.</li>
-                                    <li>Select your device in the dropdown located at the top right corner of the GParted homescreen.
+                                    <li>Install GParted with <code>sudo apt install gparted</code>, <code>sudo pacman -Sy gparted</code>, or <code>sudo yum install gparted</code>, and run it with root privileges with <code>sudo gparted</code>.</li>
+                                    <li>
+                                        Select your device in the dropdown located at the top right corner of the GParted home screen.
                                         <br>
                                         <img src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-disk.png" alt="GParted Dropdown" style="max-width: 550px; height: auto; margin: 10px 0;">
                                     </li>
-                                    <li>Right click the partition, select "Format to", then select "fat32".
+                                    <li>
+                                        Right-click the partition, select "Format to", then select "fat32".
                                         <br>
                                         <img src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/select-format-option.png" alt="GParted Formatting Dialog" style="max-width: 550px; height: auto; margin: 10px 0;">
                                     </li>
-                                    <li>Click the green check mark to apply all operations, then "Apply" at the warning dialog. Let it do it's thing.
+                                    <li>
+                                        Click the green check mark to apply all operations, then "Apply" at the warning dialog. Let it complete.
                                         <br>
                                         <img src="https://phoenixnap.com/kb/wp-content/uploads/2021/04/apply-format-operation.png" alt="GParted Checkmark Location" style="max-width: 550px; height: auto; margin: 10px 0;">
                                     </li>
                                     <li>Click "Close" when the operation is completed. Now you're free to move onto the next page!</li>
                                 </ol>
-                                <p class="card-text">More ways to format for Linux can be found <a href="https://phoenixnap.com/kb/linux-format-usb">here.</a> This Linux guide is also based off of it!</p>
+                                <p class="card-text">More ways to format for Linux can be found <a href="https://phoenixnap.com/kb/linux-format-usb">here</a>. This Linux guide is also based on it!</p>
                                 <hr class="my-4">
-                                <!-- MacOS Guide (pr3 made this too!) -->
-                                <h3 class="card-title">MicroSD Card Setup (MacOS Guide Using DiskUtility)</h3>
-                                <p class="card-text">This works for 32GB MicroSD cards, and possibly >32GB MicroSD cards. </p>
+
+                                <h3 class="card-title">MicroSD Card Setup (MacOS Guide Using Disk Utility)</h3>
+                                <p class="card-text">This works for 32GB MicroSD cards, and possibly >32GB MicroSD cards.</p>
                                 <ol class="custom-list">
                                     <li>Insert your MicroSD card into your MacOS device.</li>
                                     <li>Open Disk Utility, which is preinstalled on MacOS.</li>
-                                    <li>Select the MicroSD card, and click on "Erase" in the top toolbar. Make sure it's the correct MicroSD card!
+                                    <li>
+                                        Select the MicroSD card, and click on "Erase" in the top toolbar. Make sure it's the correct MicroSD card!
                                         <br>
                                         <img src="https://iboysoft.com/images/en-howto/format-sd-card-on-mac/format-drive-disk-utility.png" alt="Erase Dialog" style="max-width: 400px; height: auto; margin: 10px 0;">
                                     </li>
-                                    <li>Give the MicroSD card a name, and format it for "MS-DOS (FAT)", otherwise, "ExFAT" may be sufficient.
+                                    <li>
+                                        Give the MicroSD card a name, and format it for "MS-DOS (FAT)"; otherwise, "ExFAT" may be sufficient.
                                         <br>
                                         <img src="https://iboysoft.com/images/en-howto/format-sd-card-on-mac/format-drive-disk-utility-2.png" alt="MicroSD Card Naming and Formatting Dialog" style="max-width: 400px; height: auto; margin: 10px 0;">
                                     </li>
-                                    <li>If you want to securely format the MicroSD card (make it harder to recover data), open "Security Options" and adjust the slider to your preference.
+                                    <li>
+                                        To securely format the MicroSD card, open "Security Options" and adjust the slider to your preference.
                                         <br>
-                                        <img src="https://iboysoft.com/images/en-howto/format-sd-card-on-mac/security-options-disk-utility.jpeg" alt="Formatting Security Options on MacOS" tyle="max-width: 400px; height: auto; margin: 10px 0;">
+                                        <img src="https://iboysoft.com/images/en-howto/format-sd-card-on-mac/security-options-disk-utility.jpeg" alt="Formatting Security Options on MacOS" style="max-width: 400px; height: auto; margin: 10px 0;">
                                     </li>
-                                    <li>Finally, click "Erase" to format your MicroSD card.</li>
-                                    <p class="card-text">For more ways to format your MicroSD card on MacOS, <a href="https://iboysoft.com/howto/format-sd-card-on-mac.html#:~:text=Step%201%3A%20Insert%20the%20SD,less%3B%20otherwise%2C%20choose%20ExFAT.">This site is worth a visit</a>. This MacOS guide is also based off of it! </p>
+                                    <li>Click "Erase" to format your MicroSD card.</li>
                                 </ol>
+                                <p class="card-text">For more ways to format your MicroSD card on MacOS, <a href="https://iboysoft.com/howto/format-sd-card-on-mac.html#:~:text=Step%201%3A%20Insert%20the%20SD,less%3B%20otherwise%2C%20choose%20ExFAT.">this site is worth a visit</a>. This MacOS guide is also based on it!</p>
                             </div>
                         </div>
                     </div>
