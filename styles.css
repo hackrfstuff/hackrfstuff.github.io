@@ -2,6 +2,11 @@ body {
     font-family: Arial, sans-serif;
 }
 
+::selection {
+    color: white;
+    background-color: #333;
+}
+
 .sidebar {
     height: 100vh;
     position: fixed;
@@ -65,3 +70,9 @@ body {
     font-family: 'Inter', Arial, sans-serif;
 }
 
+code {
+    font-size: 17px;
+    border: 0.5px solid #333;
+    border-radius: 5px;
+    padding: 2.5px;
+}
