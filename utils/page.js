@@ -7,9 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextPath = navData.getAttribute('data-next-path');
     const nextName = navData.getAttribute('data-next-name');
 
-    const mainElement = document.querySelector('main');
-    if (!mainElement) return;
-
     const container = document.createElement('div');
     container.style.display = 'flex';
     container.style.justifyContent = 'center';
@@ -23,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         prevButton.style.display = 'flex';
         prevButton.style.alignItems = 'center';
         prevButton.style.padding = '1rem';
-        prevButton.style.backgroundColor = '#f8f9fa';
+        prevButton.style.backgroundColor = '#e9ecef';
         prevButton.style.borderRadius = '0.5rem';
         prevButton.style.textDecoration = 'none';
         prevButton.style.color = 'black';
@@ -51,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nextButton.style.display = 'flex';
         nextButton.style.alignItems = 'center';
         nextButton.style.padding = '1rem';
-        nextButton.style.backgroundColor = '#f8f9fa';
+        nextButton.style.backgroundColor = '#e9ecef';
         nextButton.style.borderRadius = '0.5rem';
         nextButton.style.textDecoration = 'none';
         nextButton.style.color = 'black';
@@ -73,7 +70,10 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(nextButton);
     }
 
-    mainElement.appendChild(container);
+    const buttonsContainer = document.getElementById('nav-buttons-container');
+    if (buttonsContainer) {
+        buttonsContainer.appendChild(container);
+    }
 });
 
 // Inspiration from flipper docs, https://docs.flipper.net/

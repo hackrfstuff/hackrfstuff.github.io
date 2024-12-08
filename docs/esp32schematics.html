@@ -26,25 +26,27 @@
                                     <li>
                                         GPS Module Schematic
                                         <br>
-                                        <img src="../images/esp32module1.jpg" alt="GPS Module Schematics" style="max-width: 600px; height: auto; margin: 10px 0;">
+                                        <img src="../images/esp32module1.jpg" alt="GPS Module Schematics" class="responsive-img">
                                     </li>
                                     <li>
                                         I2C Module Schematic
                                         <br>
-                                        <img src="../images/esp32module2.jpg" alt="I2C Mocule Schematic" style="max-width: 600px; height: auto; margin: 10px 0;">
+                                        <img src="../images/esp32module2.jpg" alt="I2C Mocule Schematic" class="responsive-img">
                                     </li>
                                     <li>
                                         Multiple I2C Modules
                                         <br>
-                                        <img src="../images/esp32module3.jpg" alt="Select MicroSD Card Screenshot" style="max-width: 600px; height: auto; margin: 10px 0;">
+                                        <img src="../images/esp32module3.jpg" alt="Select MicroSD Card Screenshot" class="responsive-img">
                                     </li>
                                     <li>
                                         Built Example (w/ multiple I2C modules)
                                         <br>
-                                        <img src="../images/esp32module4.png" alt="Built ESP32 Example" style="max-width: 600px; height: auto; margin: 10px 0;">
+                                        <img src="../images/esp32module4.png" alt="Built ESP32 Example" class="responsive-img">
                                     </li>
                                 </ol>
                                 
+                                <hr class="my-4">
+                                <div id="nav-buttons-container"></div>
                             </div>
                         </div>
                     </div>
@@ -54,30 +56,31 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        fetch('../index.html')
-            .then(response => response.text())
-            .then(data => {
-                const parser = new DOMParser();
-                const htmlDoc = parser.parseFromString(data, 'text/html');
-                const sidebar = htmlDoc.querySelector('.sidebar');
-                document.getElementById('sidebar-container').innerHTML = sidebar.innerHTML;
-
-                const links = document.querySelectorAll('#sidebar-container a');
-                links.forEach(link => {
-                    const href = link.getAttribute('href');
-                    if (href && href.startsWith('./')) {
-                        link.setAttribute('href', href.replace('./', '../'));
-                    }
-                });
-            })
-            .catch(error => console.error('Error loading sidebar:', error));
+            if (window.innerWidth >= 768) {
+                fetch('../index.html')
+                    .then(response => response.text())
+                    .then(data => {
+                        const parser = new DOMParser();
+                        const htmlDoc = parser.parseFromString(data, 'text/html');
+                        const sidebar = htmlDoc.querySelector('.sidebar');
+                        document.getElementById('sidebar-container').innerHTML = sidebar.innerHTML;
+        
+                        const links = document.querySelectorAll('#sidebar-container a');
+                        links.forEach(link => {
+                            const href = link.getAttribute('href');
+                            if (href && href.startsWith('./')) {
+                                link.setAttribute('href', href.replace('./', '../'));
+                            }
+                        });
+                    })
+                    .catch(error => console.error('Error loading sidebar:', error));
+            }
     </script>
-
     <div id="nav-data" 
-    data-prev-path="/docs/disassembly.html" 
-    data-prev-name="Disassembly" 
-    data-next-path="../index.html" 
-    data-next-name="Home">
+        data-prev-path="/docs/disassembly.html" 
+        data-prev-name="Disassembly" 
+        data-next-path="../index.html" 
+        data-next-name="Home">
     </div>
     <script src="../utils/page.js"></script>   
 </body>

@@ -2,6 +2,45 @@ body {
     font-family: 'Inter', Arial, sans-serif;
 }
 
+@media (max-width: 767px) {
+    main {
+        width: 100%;
+    }
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+@media (min-width: 768px) {
+    .responsive-img {
+        max-width: 35%;
+    }
+}
+
+main {
+    padding: 1rem; 
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 0.5rem; 
+    }
+}
+
+body:not(.index-page) .card {
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+body:not(.index-page) .card-body {
+    padding: 0;
+}
+
 ::selection {
     color: white;
     background-color: #333;
