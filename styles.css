@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
 }
 
 ::selection {
@@ -22,28 +22,37 @@ body {
 }
 
 .sidebar-title:hover {
-    color: #333; 
+    color: #333;
     text-decoration: none;
 }
 
 .accordion-button {
     font-size: 1rem;
     color: #333;
-    background-color: #f8f9fa;
+    background-color: transparent;
     border: none;
     box-shadow: none;
     outline: none;
     cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.accordion-button:hover {
+    background-color: #f8f9fa;
 }
 
 .accordion-button.no-hover:hover {
-    color: #333; 
+    color: #333;
     background-color: #f8f9fa;
-    cursor: pointer; 
+    cursor: pointer;
 }
 
 .accordion-item {
-    border: none; 
+    border: none;
+}
+
+.accordion-body {
+    padding-left: 1.5rem;
 }
 
 .accordion-body ul {
@@ -59,15 +68,18 @@ body {
     color: #333;
     font-size: 0.9rem;
     text-decoration: none;
+    display: block;
+    padding: 0.25rem 0;
+    transition: color 0.2s;
+}
+
+.accordion-body a:hover {
+    color: #007bff;
 }
 
 .custom-list li {
-    margin-bottom: 15px; 
-    line-height: 1.5;   
-}
-
-body {
-    font-family: 'Inter', Arial, sans-serif;
+    margin-bottom: 15px;
+    line-height: 1.5;
 }
 
 code {
